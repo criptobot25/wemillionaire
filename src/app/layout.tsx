@@ -139,7 +139,7 @@ export default function RootLayout({
         <Script
           id="google-adsense"
           async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1350388709654711"
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />
@@ -166,7 +166,7 @@ export default function RootLayout({
                       const ins = document.createElement('ins');
                       ins.className = 'adsbygoogle';
                       ins.style.display = 'block';
-                      ins.setAttribute('data-ad-client', 'ca-pub-XXXXXXXXXXXXXXXX');
+                      ins.setAttribute('data-ad-client', 'ca-pub-1350388709654711');
                       
                       // Configure ad units based on format
                       if (slot.format === 'horizontal') {
