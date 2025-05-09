@@ -150,16 +150,15 @@ export default function RootLayout({
             (function() {
               try {
                 window.addEventListener('load', function() {
-                  // Initialize all ad units
+                  // Initialize all ad units with responsive formats
                   const adSlots = [
-                    { id: 'google-ads-leaderboard', format: 'horizontal' },
-                    { id: 'google-ads-skyscraper-left', format: 'vertical' },
-                    { id: 'google-ads-skyscraper-right', format: 'vertical' },
-                    { id: 'google-ads-rectangle', format: 'rectangle' },
-                    { id: 'google-ads-large-mobile', format: 'horizontal' }
+                    { id: 'google-ads-leaderboard', position: 'top' },
+                    { id: 'google-ads-sidebar', position: 'side' },
+                    { id: 'google-ads-content', position: 'in-article' },
+                    { id: 'google-ads-mobile', position: 'mobile' }
                   ];
                   
-                  // Create and display ads in each slot
+                  // Create and display responsive ads in each slot
                   adSlots.forEach(slot => {
                     const adElement = document.getElementById(slot.id);
                     if (adElement) {
@@ -168,23 +167,26 @@ export default function RootLayout({
                       ins.style.display = 'block';
                       ins.setAttribute('data-ad-client', 'ca-pub-1350388709654711');
                       
-                      // Configure ad units based on format
-                      if (slot.format === 'horizontal') {
-                        ins.style.width = '100%';
-                        ins.style.height = '90px';
-                        ins.setAttribute('data-ad-format', 'horizontal');
-                      } else if (slot.format === 'vertical') {
-                        ins.style.width = '160px';
-                        ins.style.height = '600px';
-                        ins.setAttribute('data-ad-format', 'vertical');
-                      } else if (slot.format === 'rectangle') {
-                        ins.style.width = '300px';
-                        ins.style.height = '250px';
-                        ins.setAttribute('data-ad-format', 'rectangle');
-                      }
+                      // Configure responsive ads - these will automatically adapt to available space
+                      ins.style.width = '100%';
+                      ins.style.height = 'auto';
                       
-                      // Add a specific ad slot ID (you'll get this from Google AdSense)
-                      ins.setAttribute('data-ad-slot', 'YOUR_AD_SLOT_ID_HERE');
+                      // Set to auto format for better fill rate and revenue
+                      ins.setAttribute('data-ad-format', 'auto');
+                      ins.setAttribute('data-full-width-responsive', 'true');
+                      
+                      // Use specific slot IDs for different positions
+                      if (slot.position === 'top') {
+                        ins.setAttribute('data-ad-slot', 'TOP_AD_SLOT_ID'); // Replace with actual slot ID
+                      } else if (slot.position === 'side') {
+                        ins.setAttribute('data-ad-slot', 'SIDE_AD_SLOT_ID'); // Replace with actual slot ID
+                      } else if (slot.position === 'in-article') {
+                        ins.setAttribute('data-ad-slot', 'CONTENT_AD_SLOT_ID'); // Replace with actual slot ID
+                      } else if (slot.position === 'mobile') {
+                        ins.setAttribute('data-ad-slot', 'MOBILE_AD_SLOT_ID'); // Replace with actual slot ID
+                        // Only show on mobile devices using media query
+                        adElement.style.display = window.innerWidth < 768 ? 'block' : 'none';
+                      }
                       
                       // Clear the container and add the ad
                       adElement.innerHTML = '';
@@ -193,7 +195,15 @@ export default function RootLayout({
                       // Push to AdSense for display
                       (window.adsbygoogle = window.adsbygoogle || []).push({});
                       
-                      console.log('Ad initialized for:', slot.id);
+                      console.log('Responsive ad initialized for:', slot.id);
+                    }
+                  });
+                  
+                  // Add window resize listener for mobile ads
+                  window.addEventListener('resize', function() {
+                    const mobileAdContainer = document.getElementById('google-ads-mobile');
+                    if (mobileAdContainer) {
+                      mobileAdContainer.style.display = window.innerWidth < 768 ? 'block' : 'none';
                     }
                   });
                 });
