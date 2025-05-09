@@ -1,0 +1,44 @@
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../node_modules/.prisma/client"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+// Lottery Draw model - stores all historical results
+model Draw {
+  id              Int      @id @default(autoincrement())
+  drawNumber      Int      @unique
+  drawDate        DateTime
+  numbersJson     String   // Main numbers stored as JSON string
+  bonusNumber     Int?     // Bonus number if applicable
+  jackpot         Float?   // Jackpot amount if available
+  winnersCount    Int?     // Number of jackpot winners if available
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+// User-generated tickets model
+model Ticket {
+  id              Int      @id @default(autoincrement())
+  numbersJson     String   // 6 numbers selected for the ticket, stored as JSON
+  algorithm       String   // Which algorithm generated this ticket (frequency, monte carlo, etc.)
+  parametersJson  String?  // Parameters used for generation (algorithm settings), stored as JSON
+  createdAt       DateTime @default(now())
+  userId          String?  // Optional user ID if authentication is implemented
+}
+
+// Number statistics model - precalculated stats to improve performance
+model NumberStats {
+  number          Int      @id
+  frequency       Int      @default(0)
+  lastAppearance  DateTime?
+  hotColdScore    Float?   // Score indicating if number is "hot" or "cold"
+  updatedAt       DateTime @updatedAt
+} 

@@ -1,0 +1,7 @@
+# www.wemillionaire.eu robots.txt file
+# Allow all web crawlers to access all areas of the site
+User-agent: *
+Allow: /
+
+# Point to sitemap
+Sitemap: https://www.wemillionaire.eu/sitemap.xml 
