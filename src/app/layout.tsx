@@ -177,13 +177,15 @@ export default function RootLayout({
                       
                       // Use specific slot IDs for different positions
                       if (slot.position === 'top') {
-                        ins.setAttribute('data-ad-slot', 'TOP_AD_SLOT_ID'); // Replace with actual slot ID
+                        ins.setAttribute('data-ad-slot', '6772630162'); // TOP_AD_SLOT_ID
                       } else if (slot.position === 'side') {
-                        ins.setAttribute('data-ad-slot', 'SIDE_AD_SLOT_ID'); // Replace with actual slot ID
+                        ins.setAttribute('data-ad-slot', '9092489981'); // SIDE_AD_SLOT_ID
                       } else if (slot.position === 'in-article') {
-                        ins.setAttribute('data-ad-slot', 'CONTENT_AD_SLOT_ID'); // Replace with actual slot ID
+                        ins.setAttribute('data-ad-slot', '8153994594'); // CONTENT_AD_SLOT_ID
+                        ins.setAttribute('data-ad-layout', 'in-article');
+                        ins.setAttribute('data-ad-format', 'fluid');
                       } else if (slot.position === 'mobile') {
-                        ins.setAttribute('data-ad-slot', 'MOBILE_AD_SLOT_ID'); // Replace with actual slot ID
+                        ins.setAttribute('data-ad-slot', '4961673286'); // MOBILE_AD_SLOT_ID
                         // Only show on mobile devices using media query
                         adElement.style.display = window.innerWidth < 768 ? 'block' : 'none';
                       }
