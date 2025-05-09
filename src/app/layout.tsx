@@ -68,8 +68,8 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
         
-        {/* Google site verification - Substitua VERIFICATION-CODE pelo código fornecido pelo Google */}
-        <meta name="google-site-verification" content="VERIFICATION-CODE" />
+        {/* Google site verification */}
+        <meta name="google-adsense-account" content="ca-pub-1350388709654711" />
         
         {/* Add favicon */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
