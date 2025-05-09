@@ -465,13 +465,60 @@
 @media (min-width: 768px) {
   .grid {
     grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
   }
   
   .gameInfo {
     grid-template-columns: 1fr 1fr;
+    gap: 2rem;
   }
   
   .sideAdContainer {
     display: block;
+  }
+
+  /* Additional desktop-specific styles */
+  .container {
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .card {
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .resultItem {
+    padding: 1.5rem;
+  }
+  
+  /* Fix alignment issues */
+  .flexBetween {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Better spacing for desktop */
+  .warningBox {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+  
+  /* Ensure sufficient width for content on large screens */
+  .list {
+    max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  
+  /* Fix desktop layout for main content area */
+  .gameInfo {
+    margin-top: 2rem;
+  }
+  
+  /* Adjust column layout for better desktop view */
+  .rectangleAd {
+    max-width: 728px;
+    margin: 3rem auto;
   }
 } 
