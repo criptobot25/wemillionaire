@@ -128,8 +128,8 @@ export default function RootLayout({
         `}</style>
       </head>
       <body>
-        {/* Skip to content link for accessibility */}
-        <a href="#main-content" className="sr-only focus:not-sr-only">
+        {/* Skip to content link for accessibility - Hidden for visual users but available for screen readers */}
+        <a href="#main-content" className="sr-only">
           Skip to main content
         </a>
         
