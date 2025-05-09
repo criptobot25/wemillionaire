@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
+import '../styles/accessibility.css'; // Import accessibility styles
 
 // Enhanced metadata for better SEO
 export const metadata: Metadata = {
@@ -128,8 +129,8 @@ export default function RootLayout({
         `}</style>
       </head>
       <body>
-        {/* Skip to content link for accessibility - Hidden for visual users but available for screen readers */}
-        <a href="#main-content" className="sr-only">
+        {/* Skip to content link for accessibility - Hidden until focused */}
+        <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
         

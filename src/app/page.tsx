@@ -322,7 +322,7 @@ export default function Home() {
   return (
     <>
       <Seo />
-      <main>
+      <main id="main-content">
         <div className={styles.container}>
           {/* Top ad - leaderboard */}
           <div id="google-ads-leaderboard" className={styles.adContainer}></div>
