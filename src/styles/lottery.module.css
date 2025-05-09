@@ -1,0 +1,477 @@
+/* Main layout */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, sans-serif;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+  background: linear-gradient(135deg, #01723a 0%, #169b62 100%);
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  opacity: 0.9;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.gridDesktop {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Cards and components */
+.card {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  border: 1px solid #f0f0f0;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #01723a;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.number {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  border-radius: 50%;
+  font-size: 1.125rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.15s ease-in-out;
+}
+
+.numberHot {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.numberCold {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+/* Buttons */
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+.buttonPrimary {
+  background-color: #01723a;
+  color: white;
+  box-shadow: 0 4px 6px rgba(1, 114, 58, 0.25);
+}
+
+.buttonPrimary:hover {
+  background-color: #015c30;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(1, 114, 58, 0.3);
+}
+
+.buttonSuccess {
+  background-color: #16a34a;
+  color: white;
+  box-shadow: 0 4px 6px rgba(22, 163, 74, 0.25);
+}
+
+.buttonSuccess:hover {
+  background-color: #138a3f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(22, 163, 74, 0.3);
+}
+
+.buttonWarning {
+  background-color: #d97706;
+  color: white;
+}
+
+.buttonWarning:hover {
+  background-color: #b45309;
+  transform: translateY(-2px);
+}
+
+/* Form elements */
+.gameSelector {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+  background-color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+  cursor: pointer;
+}
+
+.gameSelector:focus {
+  border-color: #01723a;
+}
+
+/* Information components */
+.about {
+  margin-top: 1.5rem;
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.statBox {
+  padding: 1rem;
+  background-color: #f9fafb;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #f0f0f0;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background-color: #e6f7ef;
+  color: #01723a;
+  margin-bottom: 0.5rem;
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #e5e7eb, transparent);
+  margin: 1.5rem 0;
+}
+
+.infoText {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-top: 0.5rem;
+}
+
+.generatedBox {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background-color: #f0f9ff;
+  border-radius: 0.75rem;
+  border: 1px solid #bae6fd;
+  box-shadow: 0 4px 6px rgba(186, 230, 253, 0.1);
+}
+
+/* Lotto balls */
+.lottoBall {
+  background-color: #01723a;
+  color: white;
+}
+
+.specialBall {
+  background-color: #f59e0b;
+  color: white;
+}
+
+.lastDrawBall {
+  background-color: #4338ca;
+  color: white;
+}
+
+/* Game info components */
+.gameInfo {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.gameInfoDesktop {
+  grid-template-columns: 1fr 1fr;
+}
+
+.gameCard {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  background-color: #fafafa;
+  height: 100%;
+}
+
+.gameCardTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #01723a;
+}
+
+.gameCardBadge {
+  font-size: 0.75rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+  background-color: #e6f7ef;
+  color: #01723a;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+/* Ad containers */
+.adContainer {
+  width: 100%;
+  margin: 1.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90px;
+  background-color: #f9fafb;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.sideAdContainer {
+  display: none;
+  margin: 1rem 0;
+  min-height: 250px;
+}
+
+.sideAdContainerDesktop {
+  display: block;
+  width: 300px;
+  margin: 0 0 0 1.5rem;
+}
+
+.mobileAdContainer {
+  width: 100%;
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* Footer */
+.footer {
+  margin-top: 2.5rem;
+  text-align: center;
+  padding: 1.5rem;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.footerNav {
+  margin-top: 1rem;
+}
+
+.footerNavList {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+}
+
+.footerLink {
+  color: #01723a;
+  text-decoration: none;
+}
+
+.footerLink:hover {
+  text-decoration: underline;
+}
+
+/* Warning box */
+.warningBox {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background-color: #e6f7ef;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.warningText {
+  color: #01723a;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+/* Error box */
+.errorBox {
+  color: #ef4444;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: #fee2e2;
+  border-radius: 0.5rem;
+}
+
+.errorText {
+  font-weight: 500;
+}
+
+/* Loading spinner */
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* Rectangle ad */
+.rectangleAd {
+  padding: 1.5rem;
+  background-color: #f9fafb;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  overflow: hidden;
+  margin: 0 0 2.5rem 0;
+}
+
+.adContent {
+  min-height: 250px;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.adText {
+  color: #6b7280;
+}
+
+/* Result items */
+.resultItem {
+  padding: 1rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  border: 1px solid #e2e8f0;
+}
+
+.resultItemSelected {
+  background-color: #e6f7ef;
+}
+
+.resultTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #01723a;
+  margin-bottom: 0.5rem;
+}
+
+.resultDate {
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.resultPrize {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.resultPrizeValue {
+  color: #01723a;
+}
+
+.resultStats {
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.resultStatsValue {
+  font-weight: 500;
+}
+
+/* Ball sizes */
+.smallBall {
+  width: 2rem;
+  height: 2rem;
+  font-size: 1rem;
+}
+
+/* Flex utilities */
+.flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flexBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flexAlign {
+  display: flex;
+  align-items: center;
+}
+
+.gap05 {
+  gap: 0.5rem;
+}
+
+.gap1 {
+  gap: 1rem;
+}
+
+/* Responsive utilities */
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .gameInfo {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .sideAdContainer {
+    display: block;
+  }
+} 
